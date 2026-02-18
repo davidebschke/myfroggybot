@@ -11,3 +11,4 @@ jobs:
           java-version: '25'
           distribution: 'temurin'
       - run: mvn clean install
+        working-directory: ./my_ki_tool
