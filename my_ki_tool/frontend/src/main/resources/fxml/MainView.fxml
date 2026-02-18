@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="kitool.frontend.controller.MainController"
+            styleClass="root-pane"
+            prefWidth="1100" prefHeight="720">
+
+    <!-- ═══════════════════════════════════════════════════
+         TITELLEISTE (oben)
+    ═══════════════════════════════════════════════════ -->
+    <top>
+        <HBox styleClass="title-bar" alignment="CENTER_LEFT" spacing="12"/>
+            <padding><Insets top="12" right="20" bottom="12" left="20"/></padding>
+
+            <!-- Logo / App-Name -->
+            <Label text="🤖" styleClass="title-logo"/>
+            <Label text="MyKiTool" styleClass="title-label"/>
+
+            <!-- Spacer -->
+            <Region HBox.hgrow="ALWAYS"/>
+
+            <!-- Modellauswahl -->
+            <Label text="Modell:" styleClass="label-subtle"/>
+            <ComboBox fx:id="modelSelector"
+                      styleClass="model-selector"
+                      promptText="Modell wählen"
+                      prefWidth="180"/>
+
+            <!-- Dark Mode Toggle -->
+            <ToggleButton fx:id="darkModeToggle"
+                          text="🌙  Dark Mode"
+                          styleClass="dark-mode-toggle"
+                          onAction="#toggleDarkMode"/>
+
+            <!-- Einstellungen -->
+        <Button fx:id="settingsButton"
+                text="⚙"
+                styleClass="icon-button">
+                <!--onAction="#openSettings"> -->
+            <tooltip>
+                <Tooltip text="Einstellungen"/>
+            </tooltip>
+        </Button>
+    </top>
+
+    <!-- ═══════════════════════════════════════════════════
+         HAUPTBEREICH (Mitte)
+    ═══════════════════════════════════════════════════ -->
+    <center>
+        <SplitPane dividerPositions="0.22" styleClass="main-split">
+
+            <!-- ─────────────────────────────
+                 SEITENLEISTE (Verlauf)
+            ───────────────────────────── -->
+            <VBox styleClass="sidebar" minWidth="200" maxWidth="300">
+                <padding><Insets top="16" right="12" bottom="16" left="12"/></padding>
+
+                <!-- Neuer Chat Button -->
+                <Button text="＋  Neuer Chat"
+                        styleClass="new-chat-button"
+                        maxWidth="Infinity"></Button>
+                        <!--onAction="#newChat"-->
+
+                <VBox.margin><Insets bottom="12"/></VBox.margin>
+
+                <!-- Verlauf Label -->
+                <Label text="VERLAUF" styleClass="sidebar-section-label"/>
+
+                <!-- Chat-Verlauf Liste -->
+                <ListView fx:id="chatHistoryList"
+                          styleClass="chat-history-list"
+                          VBox.vgrow="ALWAYS"/>
+
+                <!-- Trennlinie -->
+                <Separator styleClass="sidebar-separator"/>
+
+                <!-- Unten: Info -->
+                <VBox spacing="6">
+                    <padding><Insets top="8"/></padding>
+                    <Label fx:id="ollamaStatusLabel"
+                           text="● Ollama verbunden"
+                           styleClass="status-label-ok"/>
+                    <Label text="MyKiTool v1.0"
+                           styleClass="label-subtle"/>
+                </VBox>
+            </VBox>
+
+            <!-- ─────────────────────────────
+                 CHAT-BEREICH (rechts)
+            ───────────────────────────── -->
+            <VBox styleClass="chat-area" HBox.hgrow="ALWAYS">
+
+                <!-- Chat-Nachrichten -->
+                <ScrollPane fx:id="chatScrollPane"
+                            styleClass="chat-scroll"
+                            fitToWidth="true"
+                            VBox.vgrow="ALWAYS">
+                    <VBox fx:id="chatMessageContainer"
+                          styleClass="chat-message-container"
+                          spacing="16">
+                        <padding><Insets top="24" right="32" bottom="24" left="32"/></padding>
+
+                        <!-- Willkommensnachricht -->
+                        <VBox styleClass="welcome-box" alignment="CENTER" spacing="10">
+                            <Label text="🤖" style="-fx-font-size: 48px;"/>
+                            <Label text="Wie kann ich dir helfen?" styleClass="welcome-title"/>
+                            <Label text="Stelle mir eine Frage oder starte ein Gespräch."
+                                   styleClass="welcome-subtitle"/>
+                        </VBox>
+                    </VBox>
+                </ScrollPane>
+
+                <!-- Eingabebereich -->
+                <VBox styleClass="input-area">
+                    <padding><Insets top="12" right="24" bottom="16" left="24"/></padding>
+
+                    <HBox spacing="10" alignment="BOTTOM_CENTER">
+                        <!-- Texteingabe -->
+                        <TextArea fx:id="messageInput"
+                                  styleClass="message-input"
+                                  promptText="Nachricht eingeben..."
+                                  wrapText="true"
+                                  prefRowCount="2"
+                                  maxHeight="120"
+                                  HBox.hgrow="ALWAYS"/>
+
+                        <!-- Senden Button -->
+                        <VBox alignment="BOTTOM_CENTER">
+                            <Button fx:id="sendButton"
+                                    text="➤"
+                                    styleClass="send-button"/>
+                                    <!--onAction="#sendMessage"-->
+                        </VBox>
+                    </HBox>
+
+                    <!-- Hinweis unten -->
+                    <Label text="KI kann Fehler machen. Wichtige Informationen bitte überprüfen."
+                           styleClass="disclaimer-label"/>
+                </VBox>
+            </VBox>
+
+        </SplitPane>
+    </center>
+
+</BorderPane>
