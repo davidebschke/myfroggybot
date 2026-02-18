@@ -10,3 +10,4 @@ jobs:
           java-version: '25'
           distribution: 'temurin'
       - run: mvn verify sonar:sonar
+        working-directory: ./my_ki_tool
