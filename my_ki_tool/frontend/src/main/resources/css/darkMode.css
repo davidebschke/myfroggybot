@@ -15,9 +15,10 @@
    TITELLEISTE
 ─────────────────────────────────────────────────────────────── */
 .title-bar {
-    -fx-background-color: #52121F;
+    -fx-background-color: #12121F;
     -fx-border-color: #4A6FA5;
     -fx-border-width: 0 0 5 0;
+    -fx-padding: 12 20 12 20;
 }
 
 .title-logo {
@@ -259,7 +260,7 @@
 .input-area {
     -fx-background-color: #16162A;
     -fx-border-color: #2E2E48;
-    -fx-border-width: 1 0 0 0;
+    -fx-border-width: 3 0 0 0;
 }
 
 .message-input {

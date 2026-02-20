@@ -16,7 +16,6 @@
     ═══════════════════════════════════════════════════ -->
     <top>
         <HBox styleClass="title-bar" alignment="CENTER_LEFT" spacing="12"/>
-            <padding><Insets top="12" right="20" bottom="12" left="20"/></padding>
 
             <!-- Logo / App-Name -->
             <Label text="🤖" styleClass="title-logo"/>
@@ -64,7 +63,7 @@
                 <!-- Neuer Chat Button -->
                 <Button text="＋  Neuer Chat"
                         styleClass="new-chat-button"
-                        maxWidth="Infinity"></Button>
+                        maxWidth="Infinity"/>
                         <!--onAction="#newChat"-->
 
                 <VBox.margin><Insets bottom="12"/></VBox.margin>
