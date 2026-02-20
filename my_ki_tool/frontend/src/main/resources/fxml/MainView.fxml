@@ -2,13 +2,11 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
 <?import javafx.geometry.Insets?>
 
 <BorderPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="kitool.frontend.controller.MainController"
-            styleClass="root-pane"
             prefWidth="1100" prefHeight="720">
 
     <!-- ═══════════════════════════════════════════════════
@@ -61,7 +59,8 @@
                 <padding><Insets top="16" right="12" bottom="16" left="12"/></padding>
 
                 <!-- Neuer Chat Button -->
-                <Button text="＋  Neuer Chat"
+                <Button fx:id="newChatButton"
+                        text="＋  Neuer Chat"
                         styleClass="new-chat-button"
                         maxWidth="Infinity"/>
                         <!--onAction="#newChat"-->

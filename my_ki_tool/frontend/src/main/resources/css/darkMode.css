@@ -78,11 +78,6 @@
     -fx-background-color: #2A3A5E;
 }
 
-.dark-mode-toggle:selected {
-    -fx-background-color: #5B8DEF;
-    -fx-text-fill: #FFFFFF;
-    -fx-border-color: #5B8DEF;
-}
 
 /* ───────────────────────────────────────────────────────────────
    ICON BUTTON
@@ -134,10 +129,6 @@
 
 .new-chat-button:hover {
     -fx-background-color: #7AA3F5;
-}
-
-.new-chat-button:pressed {
-    -fx-background-color: #4A7ADB;
 }
 
 .chat-history-list {
@@ -275,9 +266,6 @@
     -fx-padding: 10 14 10 14;
 }
 
-.message-input:focused {
-    -fx-border-color: #5B8DEF;
-}
 
 .send-button {
     -fx-background-color: #5B8DEF;
@@ -292,12 +280,6 @@
 
 .send-button:hover {
     -fx-background-color: #7AA3F5;
-}
-
-.send-button:pressed {
-    -fx-background-color: #4A7ADB;
-    -fx-scale-x: 0.95;
-    -fx-scale-y: 0.95;
 }
 
 .send-button:disabled {
