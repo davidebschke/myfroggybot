@@ -9,11 +9,10 @@ import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import kitool.backend.service.OllamaService;
-import java.net.URL;
 import java.util.List;
-import java.util.ResourceBundle;
+import java.util.Objects;
 
-public class MainController {
+public class MainController{
     @FXML
     private ToggleButton darkModeToggle;
     @FXML
@@ -35,11 +34,30 @@ public class MainController {
     @FXML
     private HBox titleBar;
 
-    private final OllamaService ollamaService = new OllamaService();
+    private  OllamaService ollamaService;
 
+    @FXML
+    public void initialize() {
+        ollamaService = new OllamaService();
 
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        prüfeOllamaStatus();
+        // DIREKT ohne Thread testen
+        boolean läuft = ollamaService.isOllamaRunning();
+        System.out.println("Status: " + läuft);
+
+        List<String> modelle = ollamaService.getAvailableModels();
+        System.out.println("Modelle: " + modelle);
+
+        if (!modelle.isEmpty()) {
+            modelSelector.setItems(FXCollections.observableArrayList(modelle));
+            modelSelector.setValue(modelle.get(0));
+            ollamaService.setCurrentModel(modelle.get(0));
+        }
+
+        if (läuft) {
+            ollamaStatusLabel.setText("● Ollama verbunden");
+            ollamaStatusLabel.getStyleClass().setAll("status-label-ok");
+        }
+        preferOllamaStatus();
         ladeModelle();
         konfiguriereDarkModeToggle();
         konfiguriereSendenMitEnter();
@@ -48,8 +66,7 @@ public class MainController {
     // ─────────────────────────────────────────────
     // INITIALISIERUNG
     // ─────────────────────────────────────────────
-
-    private void prüfeOllamaStatus() {
+    private void preferOllamaStatus() {
         new Thread(() -> {
             boolean läuft = ollamaService.isOllamaRunning();
             Platform.runLater(() -> {
@@ -85,6 +102,16 @@ public class MainController {
                 ollamaService.setCurrentModel(gewähltesModell);
             }
         });
+        System.out.println("modelSelector ist null: " + (modelSelector == null));
+
+        List<String> modelle = ollamaService.getAvailableModels();
+        System.out.println("Modelle: " + modelle);
+
+        if (modelSelector != null && !modelle.isEmpty()) {
+            modelSelector.setItems(FXCollections.observableArrayList(modelle));
+            modelSelector.setValue(modelle.get(0));
+            ollamaService.setCurrentModel(modelle.get(0));
+        }
     }
 
 
@@ -127,7 +154,11 @@ public class MainController {
     private void sendeNachricht() {
         String text = messageInput.getText().trim();
         if (text.isEmpty()) return;
-
+        // Prüfen ob ein Modell gewählt ist
+        if (modelSelector.getValue() == null) {
+            zeigeNachricht("Kein Modell verfügbar. Bitte stelle sicher dass Ollama ein Modell installiert hat (z.B. 'ollama pull llama3').", false);
+            return;
+        }
         // Willkommensbox entfernen beim ersten Chat
         chatMessageContainer.getChildren().removeIf(
                 node -> node.getStyleClass().contains("welcome-box")
@@ -212,10 +243,10 @@ public class MainController {
         scene.getStylesheets().clear();
         if (darkModeToggle.isSelected()) {
             scene.getStylesheets().add(
-                    getClass().getResource("/css/darkMode.css").toExternalForm());
+                    Objects.requireNonNull(getClass().getResource("/css/darkMode.css")).toExternalForm());
         } else {
             scene.getStylesheets().add(
-                    getClass().getResource("/css/lightMode.css").toExternalForm());
+                    Objects.requireNonNull(getClass().getResource("/css/lightMode.css")).toExternalForm());
         }
     }
 

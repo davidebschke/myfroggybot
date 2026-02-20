@@ -19,6 +19,7 @@ public class OllamaService {
 
     // Prüft ob Ollama läuft
     public boolean isOllamaRunning() {
+        System.out.println("Ollama is running");
         try {
             return ollamaAPI.ping();
         } catch (Exception e) {
@@ -29,11 +30,18 @@ public class OllamaService {
     // Gibt alle installierten Modelle zurück
     public List<String> getAvailableModels() {
         try {
-            return ollamaAPI.listModels()
+            List<String> modelle = ollamaAPI.listModels()
                     .stream()
                     .map(Model::getName)
                     .toList();
+
+            // Debug
+            System.out.println("Gefundene Modelle: " + modelle);
+
+            return modelle;
         } catch (Exception e) {
+            System.err.println("Fehler beim Laden der Modelle: " + e.getMessage());
+            e.printStackTrace();
             return List.of();
         }
     }
