@@ -1,0 +1,337 @@
+/* ═══════════════════════════════════════════════════════════════
+   MyKiTool - Light Mode Stylesheet (JavaFX kompatibel)
+═══════════════════════════════════════════════════════════════ */
+
+/* ───────────────────────────────────────────────────────────────
+   ROOT
+─────────────────────────────────────────────────────────────── */
+.root {
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 14px;
+    -fx-background-color: #F5F7FF;
+}
+
+/* ───────────────────────────────────────────────────────────────
+   TITELLEISTE
+─────────────────────────────────────────────────────────────── */
+.title-bar {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #D8DEFF;
+    -fx-border-width: 0 0 1 0;
+}
+
+.title-logo {
+    -fx-font-size: 22px;
+}
+
+.title-label {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #5B8DEF;
+}
+
+.label-subtle {
+    -fx-text-fill: #9AA3BF;
+    -fx-font-size: 12px;
+}
+
+/* ───────────────────────────────────────────────────────────────
+   MODELLAUSWAHL
+─────────────────────────────────────────────────────────────── */
+.model-selector {
+    -fx-background-color: #EBF1FF;
+    -fx-border-color: #5B8DEF;
+    -fx-border-width: 1.5;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-font-size: 13px;
+    -fx-cursor: hand;
+}
+
+.model-selector:hover {
+    -fx-background-color: #D6E4FF;
+}
+
+.model-selector .list-cell {
+    -fx-text-fill: #1A1A2E;
+    -fx-background-color: #FFFFFF;
+    -fx-padding: 6 10 6 10;
+}
+
+/* ───────────────────────────────────────────────────────────────
+   DARK MODE TOGGLE
+─────────────────────────────────────────────────────────────── */
+.dark-mode-toggle {
+    -fx-background-color: #EBF1FF;
+    -fx-text-fill: #5A6380;
+    -fx-border-color: #D8DEFF;
+    -fx-border-width: 1.5;
+    -fx-border-radius: 24;
+    -fx-background-radius: 24;
+    -fx-font-size: 12px;
+    -fx-cursor: hand;
+    -fx-padding: 6 14 6 14;
+}
+
+.dark-mode-toggle:hover {
+    -fx-background-color: #D6E4FF;
+}
+
+.dark-mode-toggle:selected {
+    -fx-background-color: #5B8DEF;
+    -fx-text-fill: #FFFFFF;
+    -fx-border-color: #5B8DEF;
+}
+
+/* ───────────────────────────────────────────────────────────────
+   ICON BUTTON
+─────────────────────────────────────────────────────────────── */
+.icon-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #5A6380;
+    -fx-font-size: 18px;
+    -fx-cursor: hand;
+    -fx-background-radius: 12;
+    -fx-padding: 4 8 4 8;
+}
+
+.icon-button:hover {
+    -fx-background-color: #EBF1FF;
+    -fx-text-fill: #5B8DEF;
+}
+
+/* ───────────────────────────────────────────────────────────────
+   SEITENLEISTE
+─────────────────────────────────────────────────────────────── */
+.sidebar {
+    -fx-background-color: #E8ECFC;
+    -fx-border-color: #D8DEFF;
+    -fx-border-width: 0 1 0 0;
+}
+
+.sidebar-section-label {
+    -fx-text-fill: #9AA3BF;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-padding: 0 0 6 4;
+}
+
+.sidebar-separator {
+    -fx-background-color: #D8DEFF;
+}
+
+.new-chat-button {
+    -fx-background-color: #5B8DEF;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-cursor: hand;
+    -fx-padding: 10 16 10 16;
+}
+
+.new-chat-button:hover {
+    -fx-background-color: #4A7ADB;
+}
+
+.new-chat-button:pressed {
+    -fx-background-color: #3A6ACB;
+}
+
+.chat-history-list {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-padding: 4 0 4 0;
+}
+
+.chat-history-list .list-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: #5A6380;
+    -fx-font-size: 13px;
+    -fx-padding: 8 10 8 10;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+}
+
+.chat-history-list .list-cell:hover {
+    -fx-background-color: #EBF1FF;
+    -fx-text-fill: #1A1A2E;
+}
+
+.chat-history-list .list-cell:selected {
+    -fx-background-color: #D6E4FF;
+    -fx-text-fill: #5B8DEF;
+    -fx-font-weight: bold;
+}
+
+.status-label-ok {
+    -fx-text-fill: #4CAF82;
+    -fx-font-size: 12px;
+}
+
+.status-label-error {
+    -fx-text-fill: #E05C5C;
+    -fx-font-size: 12px;
+}
+
+/* ───────────────────────────────────────────────────────────────
+   CHAT BEREICH
+─────────────────────────────────────────────────────────────── */
+.main-split {
+    -fx-background-color: #F5F7FF;
+    -fx-border-color: transparent;
+}
+
+.main-split > .split-pane-divider {
+    -fx-background-color: #D8DEFF;
+    -fx-padding: 0 1 0 1;
+}
+
+.chat-area {
+    -fx-background-color: #F5F7FF;
+}
+
+.chat-scroll {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.chat-scroll > .viewport {
+    -fx-background-color: transparent;
+}
+
+.chat-message-container {
+    -fx-background-color: transparent;
+}
+
+.welcome-box {
+    -fx-padding: 60 0 40 0;
+}
+
+.welcome-title {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1A1A2E;
+}
+
+.welcome-subtitle {
+    -fx-font-size: 14px;
+    -fx-text-fill: #9AA3BF;
+}
+
+/* ───────────────────────────────────────────────────────────────
+   CHAT-BLASEN
+─────────────────────────────────────────────────────────────── */
+.bubble-ai {
+    -fx-background-color: #ECEFFE;
+    -fx-background-radius: 4 18 18 18;
+    -fx-padding: 12 16 12 16;
+}
+
+.bubble-ai-text {
+    -fx-text-fill: #1A1A2E;
+    -fx-font-size: 14px;
+    -fx-wrap-text: true;
+}
+
+.bubble-user {
+    -fx-background-color: #5B8DEF;
+    -fx-background-radius: 18 18 4 18;
+    -fx-padding: 12 16 12 16;
+}
+
+.bubble-user-text {
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 14px;
+    -fx-wrap-text: true;
+}
+
+.bubble-sender-label {
+    -fx-font-size: 11px;
+    -fx-text-fill: #9AA3BF;
+    -fx-padding: 0 4 2 4;
+}
+
+/* ───────────────────────────────────────────────────────────────
+   EINGABEBEREICH
+─────────────────────────────────────────────────────────────── */
+.input-area {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #D8DEFF;
+    -fx-border-width: 1 0 0 0;
+}
+
+.message-input {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #D8DEFF;
+    -fx-border-width: 1.5;
+    -fx-border-radius: 12;
+    -fx-background-radius: 12;
+    -fx-text-fill: #1A1A2E;
+    -fx-prompt-text-fill: #9AA3BF;
+    -fx-font-size: 14px;
+    -fx-padding: 10 14 10 14;
+}
+
+.message-input:focused {
+    -fx-border-color: #5B8DEF;
+}
+
+.send-button {
+    -fx-background-color: #5B8DEF;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 18px;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-cursor: hand;
+    -fx-min-width: 48px;
+    -fx-min-height: 48px;
+}
+
+.send-button:hover {
+    -fx-background-color: #4A7ADB;
+}
+
+.send-button:pressed {
+    -fx-background-color: #3A6ACB;
+    -fx-scale-x: 0.95;
+    -fx-scale-y: 0.95;
+}
+
+.send-button:disabled {
+    -fx-background-color: #9AA3BF;
+    -fx-opacity: 0.6;
+}
+
+.disclaimer-label {
+    -fx-text-fill: #9AA3BF;
+    -fx-font-size: 11px;
+    -fx-padding: 6 0 0 0;
+}
+
+/* ───────────────────────────────────────────────────────────────
+   SCROLLBAR
+─────────────────────────────────────────────────────────────── */
+.scroll-bar {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: #D8DEFF;
+    -fx-background-radius: 4;
+}
+
+.scroll-bar .thumb:hover {
+    -fx-background-color: #9AA3BF;
+}
+
+.scroll-bar .track {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar .increment-button,
+.scroll-bar .decrement-button {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
