@@ -17,7 +17,7 @@
 .title-bar {
     -fx-background-color: #FFFFFF;
     -fx-border-color: #D8DEFF;
-    -fx-border-width: 0 0 1 0;
+    -fx-border-width: 0 0 5 0;
 }
 
 .title-logo {
@@ -106,7 +106,7 @@
 .sidebar {
     -fx-background-color: #E8ECFC;
     -fx-border-color: #D8DEFF;
-    -fx-border-width: 0 1 0 0;
+    -fx-border-width: 0 5 0 0;
 }
 
 .sidebar-section-label {
@@ -224,13 +224,13 @@
    CHAT-BLASEN
 ─────────────────────────────────────────────────────────────── */
 .bubble-ai {
-    -fx-background-color: #ECEFFE;
+    -fx-background-color: #1A8AEF;
     -fx-background-radius: 4 18 18 18;
     -fx-padding: 12 16 12 16;
 }
 
 .bubble-ai-text {
-    -fx-text-fill: #1A1A2E;
+    -fx-text-fill: #AFFFFF;
     -fx-font-size: 14px;
     -fx-wrap-text: true;
 }
