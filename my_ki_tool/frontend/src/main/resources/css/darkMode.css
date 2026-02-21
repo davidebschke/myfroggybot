@@ -102,7 +102,7 @@
 .sidebar {
     -fx-background-color: #12121F;
     -fx-border-color: #4A6FA5;
-    -fx-border-width: 0 2 0 0;
+    -fx-border-width: 0 5 0 0;
 }
 
 .sidebar-section-label {
@@ -223,7 +223,7 @@
 
 .bubble-ai-text {
     -fx-text-fill: #E8EAFF;
-    -fx-font-size: 14px;
+    -fx-font-size: 18px;
     -fx-wrap-text: true;
 }
 
@@ -235,13 +235,13 @@
 
 .bubble-user-text {
     -fx-text-fill: #FFFFFF;
-    -fx-font-size: 14px;
+    -fx-font-size: 18px;
     -fx-wrap-text: true;
 }
 
 .bubble-sender-label {
-    -fx-font-size: 11px;
-    -fx-text-fill: #5A6380;
+    -fx-font-size: 15px;
+    -fx-text-fill: #A2F380;
     -fx-padding: 0 4 2 4;
 }
 
@@ -260,7 +260,7 @@
     -fx-border-width: 1.5;
     -fx-border-radius: 12;
     -fx-background-radius: 12;
-    -fx-text-fill: #E8EAFF;
+    -fx-text-fill: #000000;
     -fx-prompt-text-fill: #5A6380;
     -fx-font-size: 14px;
     -fx-padding: 10 14 10 14;
@@ -302,7 +302,7 @@
 
 .scroll-bar .thumb {
     -fx-background-color: #2E2E56;
-    -fx-background-radius: 4;
+    -fx-background-radius: 7;
 }
 
 .scroll-bar .thumb:hover {
