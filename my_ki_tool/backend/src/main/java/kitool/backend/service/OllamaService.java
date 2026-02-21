@@ -1,10 +1,13 @@
 package kitool.backend.service;
 
 import io.github.ollama4j.OllamaAPI;
+import io.github.ollama4j.exceptions.OllamaBaseException;
 import io.github.ollama4j.models.Model;
 import io.github.ollama4j.models.OllamaResult;
 import io.github.ollama4j.utils.OptionsBuilder;
 
+import java.io.IOException;
+import java.net.URISyntaxException;
 import java.util.List;
 
 public class OllamaService {
@@ -19,10 +22,9 @@ public class OllamaService {
 
     // Prüft ob Ollama läuft
     public boolean isOllamaRunning() {
-        System.out.println("Ollama is running");
         try {
             return ollamaAPI.ping();
-        } catch (Exception e) {
+        } catch (Exception _) {
             return false;
         }
     }
@@ -30,17 +32,12 @@ public class OllamaService {
     // Gibt alle installierten Modelle zurück
     public List<String> getAvailableModels() {
         try {
-            List<String> modelle = ollamaAPI.listModels()
+           return ollamaAPI.listModels()
                     .stream()
                     .map(Model::getName)
                     .toList();
 
-            // Debug
-            System.out.println("Gefundene Modelle: " + modelle);
-
-            return modelle;
-        } catch (Exception e) {
-            System.err.println("Fehler beim Laden der Modelle: " + e.getMessage());
+        } catch (InterruptedException | OllamaBaseException | IOException | URISyntaxException e) {
             e.printStackTrace();
             return List.of();
         }
