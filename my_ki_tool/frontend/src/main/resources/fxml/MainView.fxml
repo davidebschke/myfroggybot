@@ -13,37 +13,31 @@
          TITELLEISTE (oben)
     ═══════════════════════════════════════════════════ -->
     <top>
-        <HBox styleClass="title-bar" alignment="CENTER_LEFT" spacing="12"/>
-
-            <!-- Logo / App-Name -->
+        <HBox fx:id="titleBar" styleClass="title-bar" alignment="CENTER_LEFT" spacing="12">
             <Label text="🤖" styleClass="title-logo"/>
             <Label text="MyKiTool" styleClass="title-label"/>
-
-            <!-- Spacer -->
             <Region HBox.hgrow="ALWAYS"/>
-
-            <!-- Modellauswahl -->
             <Label text="Modell:" styleClass="label-subtle"/>
             <ComboBox fx:id="modelSelector"
                       styleClass="model-selector"
                       promptText="Modell wählen"
                       prefWidth="180"/>
-
-            <!-- Dark Mode Toggle -->
             <ToggleButton fx:id="darkModeToggle"
                           text="🌙  Dark Mode"
                           styleClass="dark-mode-toggle"
                           onAction="#toggleDarkMode"/>
-
-            <!-- Einstellungen -->
-        <Button fx:id="settingsButton"
-                text="⚙"
-                styleClass="icon-button">
-                <!--onAction="#openSettings"> -->
-            <tooltip>
-                <Tooltip text="Einstellungen"/>
-            </tooltip>
-        </Button>
+            <Button fx:id="settingsButton"
+                    text="⚙"
+                    styleClass="icon-button"
+                    onAction="#openSettings">
+                <tooltip>
+                    <Tooltip text="Einstellungen"/>
+                </tooltip>
+            </Button>
+            <HBox.margin>
+                <Insets top="12" right="20" bottom="12" left="20"/>
+            </HBox.margin>
+        </HBox>
     </top>
 
     <!-- ═══════════════════════════════════════════════════

@@ -14,7 +14,7 @@ public class OllamaService {
 
     public OllamaService() {
         this.ollamaAPI = new OllamaAPI("http://localhost:11434");
-        this.ollamaAPI.setRequestTimeoutSeconds(120);
+        this.ollamaAPI.setRequestTimeoutSeconds(300);
     }
 
     // Prüft ob Ollama läuft

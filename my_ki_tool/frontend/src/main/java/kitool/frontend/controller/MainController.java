@@ -42,10 +42,8 @@ public class MainController{
 
         // DIREKT ohne Thread testen
         boolean läuft = ollamaService.isOllamaRunning();
-        System.out.println("Status: " + läuft);
 
         List<String> modelle = ollamaService.getAvailableModels();
-        System.out.println("Modelle: " + modelle);
 
         if (!modelle.isEmpty()) {
             modelSelector.setItems(FXCollections.observableArrayList(modelle));
@@ -166,6 +164,7 @@ public class MainController{
 
         // User-Nachricht anzeigen
         zeigeNachricht(text, true);
+        System.out.println("Das ist mein Text: "+text);
         messageInput.clear();
         sendButton.setDisable(true);
 
