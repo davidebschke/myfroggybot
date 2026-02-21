@@ -302,7 +302,7 @@
 
 .scroll-bar .thumb {
     -fx-background-color: #2E2E56;
-    -fx-background-radius: 4;
+    -fx-background-radius: 7;
 }
 
 .scroll-bar .thumb:hover {
